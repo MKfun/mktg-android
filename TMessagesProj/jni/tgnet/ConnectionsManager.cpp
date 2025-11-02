@@ -1808,29 +1808,25 @@ uint8_t ConnectionsManager::getIpStratagy() {
 
 void ConnectionsManager::initDatacenters() {
     Datacenter *datacenter;
-    std::string ipv4="192.168.1.100";
-        std::string ipv6="fe80::91c9:ad67:3da3:4743%20";
-        uint32_t port=20443;
-        uint32_t port2=20443;
     if (!testBackend) {
         if (datacenters.find(1) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 1);
-                datacenter->addAddressAndPort(ipv4, port, 0, "");
-//                datacenter->addAddressAndPort(ipv6, port, 1, "");
+            datacenter->addAddressAndPort("176.124.222.40", 20443, 0, "");
+            datacenter->addAddressAndPort("2a12:5940:dab3::2", 20443, 1, "");
             datacenters[1] = datacenter;
         }
 
         if (datacenters.find(2) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 2);
-                datacenter->addAddressAndPort(ipv4, port, 0, "");
-//                datacenter->addAddressAndPort(ipv6, port, 1, "");
+            datacenter->addAddressAndPort("193.247.81.251", 20543, 0, "");
+//            datacenter->addAddressAndPort(ipv6, port, 1, "");
             datacenters[2] = datacenter;
         }
 
         if (datacenters.find(3) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 3);
-                 datacenter->addAddressAndPort(ipv4, port2, 0, "");
-//                 datacenter->addAddressAndPort(ipv6, port2, 1, "");
+            datacenter->addAddressAndPort("94.156.102.196", 20643, 0, "");
+//            datacenter->addAddressAndPort(ipv6, port2, 1, "");
             datacenters[3] = datacenter;
         }
 
@@ -1850,22 +1846,22 @@ void ConnectionsManager::initDatacenters() {
     } else {
         if (datacenters.find(1) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 1);
-                datacenter->addAddressAndPort(ipv4, port, 0, "");
-//                datacenter->addAddressAndPort(ipv6, port, 1, "");
+            datacenter->addAddressAndPort("176.124.222.40", 40443, 0, "");
+            datacenter->addAddressAndPort("2a12:5940:dab3::2", 40443, 1, "");
             datacenters[1] = datacenter;
         }
 
         if (datacenters.find(2) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 2);
-                datacenter->addAddressAndPort(ipv4, port, 0, "");
-//                datacenter->addAddressAndPort(ipv6, port, 1, "");
+            datacenter->addAddressAndPort("193.247.81.251", 40543, 0, "");
+//            datacenter->addAddressAndPort(ipv6, port, 1, "");
             datacenters[2] = datacenter;
         }
 
         if (datacenters.find(3) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 3);
-                 datacenter->addAddressAndPort(ipv4, port, 0, "");
-//                 datacenter->addAddressAndPort(ipv6, port, 1, "");
+            datacenter->addAddressAndPort("94.156.102.196", 40643, 0, "");
+//            datacenter->addAddressAndPort(ipv6, port, 1, "");
             datacenters[3] = datacenter;
         }
     }
