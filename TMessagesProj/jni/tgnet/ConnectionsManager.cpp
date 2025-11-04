@@ -1826,6 +1826,7 @@ void ConnectionsManager::initDatacenters() {
         if (datacenters.find(3) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 3);
             datacenter->addAddressAndPort("94.156.102.196", 20643, 0, "");
+            datacenter->addAddressAndPort("94.156.102.196", 20644, 0, "");
 //            datacenter->addAddressAndPort(ipv6, port2, 1, "");
             datacenters[3] = datacenter;
         }
@@ -1861,6 +1862,7 @@ void ConnectionsManager::initDatacenters() {
         if (datacenters.find(3) == datacenters.end()) {
             datacenter = new Datacenter(instanceNum, 3);
             datacenter->addAddressAndPort("94.156.102.196", 40643, 0, "");
+            datacenter->addAddressAndPort("94.156.102.196", 40644, 0, "");
 //            datacenter->addAddressAndPort(ipv6, port, 1, "");
             datacenters[3] = datacenter;
         }
